@@ -1,0 +1,12 @@
+
+.container{
+    position: relative;
+    width: 960px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container .card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(18, 190, 233, 0.5);
+}

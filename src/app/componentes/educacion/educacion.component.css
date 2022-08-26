@@ -1,0 +1,14 @@
+.logo2{
+    filter:grayscale(100%);
+    transition:0.6s;
+    -webkit-transition: .6s;
+    -moz-transition: .6s;
+    }
+    
+.logo2:hover{
+    filter:grayscale(0%);
+    margin-top:-8px;
+    -webkit-box-shadow: 0px 20px 26px -9px rgba(119, 123, 126, 0.75);
+    -moz-box-shadow: 0px 20px 26px -9px rgba(119, 123, 126, 0.75);
+    box-shadow: 0px 20px 26px -9px rgba(119, 123, 126, 0.75);
+}

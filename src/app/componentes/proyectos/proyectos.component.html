@@ -1,0 +1,30 @@
+<head>
+    <link href="proyectos.component.css">
+</head>
+<div>
+    <h2 class="tuclase">Mis Proyectos</h2>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button class="btn btn-ligth" [routerLink]="['/proyectos']" *ngIf="isLogged"><i class="fas fa-address-card"></i> Nuevo</button>
+    </div>
+</div>
+
+<div class="container p-3" >
+  <div class="col-md-3" *ngFor="let proyecto of proyectos">
+    <div class="card text-center" >
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        {{proyecto.titulo}}
+        <button class="btn btn-danger" *ngIf="isLogged">
+          <i class="far fa-trash-alt" (click)="delete(proyecto.id)" ></i>
+        </button>
+      </div>
+      <img class="card-img-top" [src]="proyecto.imagen">
+      <div class="card-body">
+        <p>{{proyecto.descripcion}}</p>
+        <a class="btn btn-info btn-block" [routerLink]="['/proyectos', proyecto.id]" *ngIf="isLogged">
+          EDIT
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+

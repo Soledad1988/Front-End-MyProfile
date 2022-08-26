@@ -1,0 +1,41 @@
+<h2 class="tuclase">Ingrese nueva Educacion</h2>
+<div class="container p-5" class="grid" style=" text-align: center;">
+    <div class="col-md-4 ofsset-md-2" style=" margin:0px auto;">
+            <div class="card bg-dark">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="url" name="logo" [(ngModel)]="educacion.imagen" placeholder="Ingrese URL de la imagen" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="empresa" placeholder="Nombre de la Empresa" [(ngModel)]="educacion.titulo" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <textarea type="text" name="descripcion" [(ngModel)]="educacion.descripcion" placeholder="Breve descripcion /200 caratacteres" rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="inicio" [(ngModel)]="educacion.fecha_inicio" placeholder="Fecha de Inicio" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="fin" [(ngModel)]="educacion.fecha_fin" placeholder="Fecha Finalizacion" class="form-control">
+                        </div>
+                    </form>
+                
+                </div>
+                <button class="btn btn-success" (click)="create()">Agregar</button>
+
+            </div>
+    </div>
+
+    <!--Previsualizacion-->
+    <div class="col-md-6 ofsset-md-2">
+        <div class="card card-body text-center">
+            <img [src]="educacion.imagen" class="card-img-top">
+            <h3>{{educacion.id}}. {{educacion.id}}</h3>
+            <p>{{educacion.descripcion}}</p>
+            <p>{{educacion.fecha_inicio}} - {{educacion.fecha_fin}}</p>
+        </div>
+        <h5><small class="text-muted">Previsualizacion</small></h5>
+    </div>
+
+</div>

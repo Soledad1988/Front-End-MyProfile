@@ -1,0 +1,32 @@
+<div class="container p-3">
+    <div>
+        <h2 class="tuclase">Educación</h2>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-ligth" [routerLink]="['/educacion']" *ngIf="isLogged"><i class="fas fa-address-card"></i> Nuevo</button>
+        </div>
+    </div>
+  
+      <div class="card mb-3" *ngFor="let educacion of educaciones">
+        <div class="row">
+          <div class="col-md-4">
+            <img  [src]="educacion.imagen"height="200px" width="200px" class="img-fluid rounded-start" class="logo2">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{educacion.titulo}}</h5>
+              <p class="card-text">{{educacion.descripcion}}</p>
+              <div class="text-center">
+                <span class="card-text"><small class="text-muted">{{educacion.fecha_inicio}}</small></span> --
+                <span class="card-text"><small class="text-muted">{{educacion.fecha_fin}}</small></span>  
+              </div>
+               </div>
+          </div>
+          <div class="col-md-1" >
+            <button type="button" *ngIf="isLogged" id="btn-edit"class="btn btn-outline-dark" [routerLink]="['/educacion', educacion.id]"><i class="fas fa-pen"></i></button>
+            <button type="button" *ngIf="isLogged" class="btn btn-outline-danger" (click)="delete(educacion.id)"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+

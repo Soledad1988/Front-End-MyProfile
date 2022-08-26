@@ -1,0 +1,35 @@
+<head>
+    <!-- CSS only -->
+    <link href="laboral.component.css">
+  </head>
+  <div class="container">
+    <div>
+        <h2 class="tuclase">Experiencia Laboral</h2>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-ligth" [routerLink]="['/formulario']" *ngIf="isLogged"><i class="fas fa-address-card"></i> Nuevo</button>
+        </div>
+    </div>
+  
+      <div class="card mb-3" *ngFor="let laboral of expLaborales" >
+        <div class="row p-3">
+          <div class="col-md-4">
+            <img [src]="laboral.imagen" height="200px" width="200px"  class="img-circle" style=" border-radius: 40px;" class="logo2">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{laboral.empresa}}</h5>
+              <p class="card-text">{{laboral.descripcion}}</p>
+              
+            </div>
+            <div class="text-center p-2">
+              <span class="card-text"><small class="text-muted">{{laboral.fecha_desde}}</small></span> --
+              <span class="card-text"><small class="text-muted">{{laboral.fecha_hasta}}</small></span>  
+            </div>
+          </div>
+          <div class="col-md-1" >
+            <button type="button" *ngIf="isLogged" id="btn-edit"class="btn btn-outline-dark" [routerLink]="['/formulario', laboral.id]"><i class="fas fa-pen"></i></button>
+            <button type="button" *ngIf="isLogged" class="btn btn-outline-danger" (click)="delete(laboral.id)"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+  </div>
